@@ -5,7 +5,10 @@ class Solution {
             int max =-1;
             for(int j = i+1;j<arr.length;j++)
             {
-                max = Math.max(max , arr[j]);
+                if(max < arr[j])
+                {
+                    max = arr[j];
+                }
             }
             arr[i]= max;
         }
