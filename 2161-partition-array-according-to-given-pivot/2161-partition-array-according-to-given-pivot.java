@@ -1,34 +1,27 @@
 class Solution {
     public int[] pivotArray(int[] nums, int pivot) {
-        List<Integer> list1 = new ArrayList<>();
-        List<Integer> list2 = new ArrayList<>();
-        for(int i:nums)
-        {
-            if(i<pivot)
-            {
-                list1.add(i);
-            }
-            if(i > pivot)
-            {
-                list2.add(i);
-            }
-        }
         int arr[] = new int[nums.length];
         int ind =0;
-        for(int i :list1)
+        for(int i=0;i<nums.length;i++)
         {
-            arr[ind++] = i;
+            if(nums[i] < pivot)
+            {
+                arr[ind++] = nums[i];
+            }
         }
-        for(int i=0;i<arr.length;i++)
+        for(int i=0;i<nums.length;i++)
         {
             if(nums[i] == pivot)
             {
-                arr[ind++] = pivot;
+                arr[ind++] = nums[i];
             }
         }
-        for(int i : list2)
+        for(int i=0;i<nums.length;i++)
         {
-            arr[ind++] = i;
+            if(nums[i] > pivot)
+            {
+                arr[ind++] = nums[i];
+            }
         }
         return arr;
     }
