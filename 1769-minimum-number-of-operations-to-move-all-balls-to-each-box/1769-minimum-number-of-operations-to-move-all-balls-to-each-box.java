@@ -7,7 +7,7 @@ class Solution {
             int sum=0;
             for(int j=0;j<ch.length;j++)
             {
-                if(ch[j] =='1' && i != j)
+                if(ch[j] =='1' )
                 {
                     sum += Math.abs(j-i);
                 }
