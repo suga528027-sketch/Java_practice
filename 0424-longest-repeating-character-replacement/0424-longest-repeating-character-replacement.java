@@ -8,7 +8,7 @@ class Solution {
         {
             fre[s.charAt(i)-'A']++;
             maxcount = Math.max(maxcount , fre[s.charAt(i)-'A']);
-            if((i-left+1)-maxcount > k)
+            while((i-left+1)-maxcount > k)
             {
                 fre[s.charAt(left)-'A']--;
                 left++;
