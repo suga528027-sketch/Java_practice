@@ -9,13 +9,14 @@ class Solution {
         boolean b = false;
         for(char i:map.keySet())
         {
+            int fre = map.get(i);
             if(map.get(i) % 2 == 0)
             {
-                count += map.get(i);
+                count += fre;
             }
             else
             {
-                count += map.get(i)-1;
+                count += fre-1;
                 b = true;
             }
         }
