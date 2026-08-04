@@ -13,7 +13,7 @@ class Solution {
             ans.add(new ArrayList<>(temp));
             return;
         }
-        for(int i=index;i<nums.length;i++)
+        for(int i=0;i<nums.length;i++)
         {
             if(b[i]) 
             {
