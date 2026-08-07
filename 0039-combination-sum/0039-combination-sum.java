@@ -13,18 +13,17 @@ class Solution {
 	        ans.add(new ArrayList<>(temp));
 	        return;
 	    }
-	    if(ind >= arr.length  || sum > target)
+	    if(ind == arr.length  || sum > target)
 	    {
 	        return;
 	    }
-	    temp.add(arr[ind]);
-	    sum = sum+arr[ind];
-
-	    backtrack(ind , target , arr , temp ,sum);
-
-	    sum -= arr[ind];
-	    temp.remove(temp.size()-1);
-
-	    backtrack(ind+1 , target , arr, temp , sum);
+	    for(int i = ind ; i < arr.length ; i++)
+        {
+            temp.add(arr[i]); 
+             
+            backtrack(i , target , arr , temp , sum + arr[i]);
+ 
+            temp.remove(temp.size()-1);
+        }
 	}
 }
