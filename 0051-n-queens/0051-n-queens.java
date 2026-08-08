@@ -13,9 +13,10 @@ class Solution {
 
     public void solve(int col , char [][] board)
     {
+        // add result to the answer list
         if(col == board.length) { 
             List<String> temp = new ArrayList<>();
-            for(char [] c :board)
+            for(char[] c : board)
             {
                 StringBuilder sb = new StringBuilder();
                 for(char ch:c)
@@ -32,7 +33,10 @@ class Solution {
             if(isValid(row , col , board))
             {
                 board[row][col] = 'Q';
+                //recursion
                 solve(col+1 , board);
+                
+                // backtracking removing the queen and placing dot again
                 board[row][col] = '.';
             }
         }
@@ -67,7 +71,7 @@ class Solution {
             r++;
             c--;
         } 
-        // no need to check right because no queens placed in right yet
+        // no need to check right because no queens placed in right yet and particular coloumn
         return true;
     }
 }
