@@ -15,20 +15,18 @@
  */
 class Solution {
     public int maxDepth(TreeNode root) {
-        int maximumDepth = helper(root , 0);
+        int maximumDepth = helper(root);
 
         return maximumDepth;
     }
     
-    public int helper(TreeNode root , int maximumDepth)
+    public int helper(TreeNode root)
     {
         if(root == null)
         {
             return 0;
         }
 
-        maximumDepth = 1 + Math.max(helper(root.left , maximumDepth) , helper(root.right , maximumDepth));
-
-        return maximumDepth;
+        return 1 + Math.max(helper(root.left) , helper(root.right));
     }
 }
