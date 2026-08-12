@@ -27,11 +27,11 @@ class Solution {
         {
             return;
         }
+        sum (root.left , low , high);
         if(root.val >= low && root.val <= high)
         {
             sum += root.val;
         }
-        sum (root.left , low , high);
         sum (root.right , low , high);
     }
 }
