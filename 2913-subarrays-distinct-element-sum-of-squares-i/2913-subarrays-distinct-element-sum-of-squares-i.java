@@ -4,13 +4,11 @@ class Solution {
        
         for(int i = 0; i < nums.size(); i++)
         {
-            Map<Integer , Integer> map = new HashMap<>();
+            Set<Integer> set = new HashSet<>();
             for(int j = i; j < nums.size(); j++)
             {
-               // System.out.println(map);
-                map.put(nums.get(j) , map.getOrDefault(nums.get(j),0)+1);
-                res += map.size() * map.size();
-                System.out.println(map.size());
+                set.add(nums.get(j));
+                res += set.size() * set.size();
             }
             
         }
