@@ -5,12 +5,11 @@ class Solution {
         {
             map.put(i , nums[i]);
         }
-
         List<List<Integer>> ans = new ArrayList<>();
-        
+        List<Integer> temp = new ArrayList<>();
         for(int i = 0; i < nums.length; i++)
         {
-            List<Integer> temp = new ArrayList<>();
+            if(map.get(i) == -1) continue;
             int value = map.get(i);
             for(Integer k : map.keySet())
             {
@@ -20,10 +19,9 @@ class Solution {
                     map.put(k , -1);
                 }
             }
-            if(temp.size() > 0) ans.add(new ArrayList<>(temp));
+            ans.add(new ArrayList<>(temp));
+            temp.clear();
         }
-       
-        System.out.print(map);
         return ans;
     }
 }
