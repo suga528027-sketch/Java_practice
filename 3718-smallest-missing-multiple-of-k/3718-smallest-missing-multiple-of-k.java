@@ -6,14 +6,14 @@ class Solution {
             set.add(i);
         }
         int i = k;
-        while(set.contains(k))
+        while(set.contains(i))
         {
-            if(!set.contains(k))
+            if(!set.contains(i))
             {
-                return k;
+                return i;
             }
-            k += i;
+            i += k;
         }
-        return k;
+        return i;
     }
 }
