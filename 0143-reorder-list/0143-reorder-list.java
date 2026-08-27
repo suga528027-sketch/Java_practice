@@ -11,9 +11,9 @@ class Solution {
         while (left < right) {
             list.get(left).next = list.get(right);
             left++;
-            if (left == right) {
-                break;
-            }
+            // if (left == right) {
+            //     break;
+            // }
             list.get(right).next = list.get(left);
             right--;
         }
