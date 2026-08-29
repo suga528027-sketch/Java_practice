@@ -4,7 +4,7 @@ class Solution {
         int[] fre = new int[101];
         for(int i:bulbs)
         {
-            fre[i - 0]++;
+            fre[i]++;
         }
 
         for(int i = 0;i<fre.length;i++)
